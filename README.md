@@ -25,6 +25,7 @@ In this project, we will explore the ways of building a HomeLab with minimal har
 ## Table of Content
 
 1. [Installing the Operating System (OS)](##Installing-the-Operating-System-(OS))
+2. [Configuring remote access via Secure Shell (SSH)](##Configuring-remote-access-via-Secure-Shell-(SSH))
 
 ## Installing the Operating System (OS)
 
@@ -113,7 +114,7 @@ sudo nano /etc/ssh/sshd.config
 * Locate "PasswordAuthentication" and set to "no"
 * As we will not be using this feature, it will be safer to also locate "UsePAM" and set to "no"
 
-Exit and save ```Ctrl + w``` -> yes
+Exit and save ```Ctrl + x``` -> yes
 
 
 
