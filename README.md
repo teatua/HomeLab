@@ -1,4 +1,4 @@
-# HomeLab build on 1 small factor server running Debian 12
+# HomeLab build on 1 small factor server running Debian 12 (Bookworm)
 
 ## Description 
 
@@ -6,6 +6,14 @@ In this project, we will explore the ways of building a HomeLab with minimal Har
 
 ## Table of Content 
 
-[Installing the Operating System (OS)](##Installing-the-Operating-System-(OS))
+1. [Installing the Operating System (OS)](##Installing-the-Operating-System-(OS))
 
 ## Installing the Operating System (OS)
+
+You will require:
+
+* Debian 12 (bookworm) Optical Disc Image [(ISO)](https://www.debian.org/download)
+* Bootable USB (8GB minimum)
+* [Balena Etcher](https://etcher.balena.io/)
+
+
