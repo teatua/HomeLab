@@ -1,8 +1,8 @@
-# HomeLab build on a small factor server running Debian 12 (Bookworm)
+# HomeLab built on a small factor server running Debian 12 (Bookworm) and containerized applications
 
 ## Description 
 
-In this project, we will explore the ways of building a HomeLab with minimal hardware requirements. In this case, I am using an intel NUC i3 with 4 core, 8 threds running at 2.1GHz, with 8GB Ram and only 120 GB storage ! Small factor PC's of this kind can be cheap yet powerful enough to gain full sovereignty over your LAB ;)
+In this project, we will explore the ways of building a HomeLab with minimal hardware requirements. In this case, I am using an intel NUC i3 with 4 core, 8 threds running at 2.1GHz, with 8GB Ram and only 120 GB storage ! Small factor PC's of this kind can be found for cheap, avoiding ongoing and unexpected bills from cloud providers. Whilst being powerful enough to run several containerized applications, and gain full sovereignty over your LAB environment.
 
 **System minimal requirements:**
 
@@ -15,6 +15,7 @@ In this project, we will explore the ways of building a HomeLab with minimal har
 **Accessory requirements:**
 
 * Your personal computer / laptop
+* Your personal Smart Phone
 * Monitor
 * Mouse
 * Keyboard
@@ -25,7 +26,8 @@ In this project, we will explore the ways of building a HomeLab with minimal har
 ## Table of Content
 
 1. [Installing the Operating System (OS)](##Installing-the-Operating-System-(OS))
-2. [Configuring remote access via Secure Shell (SSH)](##Configuring-remote-access-via-Secure-Shell-(SSH))
+2. [Configuring Wake on Lan (WOL) using your personal Smart Phone]
+3. [Configuring remote access via Secure Shell (SSH)](##Configuring-remote-access-via-Secure-Shell-(SSH))
 
 ## Installing the Operating System (OS)
 
@@ -47,13 +49,13 @@ Make sure to have your server connected to a monitor with keyboard and mouse.
 
 1. Insert the USB drive
 2. Check your server's motherboard manual on how to boot in BIOS, something alike pressing Delete on system wake.
-3. Once in the BIOS, find and set the USB drive to be first in boot priority. Enable Wake on Lan and save and exit.
+3. Once in the BIOS, find and set the USB drive to be first in boot priority. Enable Wake on Lan and save / exit.
 
 Your server should now launch the Debian 12 installation menu, you can choose a non graphical interface. For security purposes, it would be recommended to use a strong and unique password for both your root user, and session user. 
 
 ## Configuring remote access via Secure Shell (SSH)
 
-From the terminal, login as root with your set credential:
+From your server's terminal, login as root with your set credential:
 ```
 sudo su
 ```
