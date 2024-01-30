@@ -79,6 +79,46 @@ Your router might be Dynamically assigning an IP address to your device through 
 
 On your personal device, login to your router via 192.168.0.1 / 192.168.0.10 or following your router's manual -> Locate DHCP Server and address reservation, you will there be able to assign a static IP to your Server.
 
+__Let's SSH__
+
+* For Windows Users, you may need to enable ssh following the [Microsoft Guidelines](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
+* For Mac users, it should already be up and ready to go
+* For Linux users, you may need to repeat the openssh server install following your package manager guidelines.
+
+(replace user and ip address)
+```
+ssh user@ip address
+```
+Now that you have successfuly SSH'd into your server, type in ```exit``` to come back to your personal computer terminal.
+
+To secure the SSH connection, we will create an SSH key with the following command
+```
+ssh-keygen -t ed25519
+```
+_-t stands for type. This allows you to choose between different key algorithms supported by SSH. the ed25519 algorithm is one of the most secure up to date, as of 2023_
+
+We will now transfer this key onto our server
+```
+ssh-copy-id user@ip address
+```
+Log back in, notice you will not be asked for a user password.
+```
+ssh user@ip address
+```
+We will now disable root and password login, for this we will change the configuration file of sshd.config, located at /etc/ssh/sshd.config
+```
+sudo nano /etc/ssh/sshd.config
+```
+* Locate "PermitRootLogin" with ```Ctrl + w``` and set to "no". For this to apply, makes sure to remove any comment sign __#__ at the begining of the line.
+* Locate "PasswordAuthentication" and set to "no"
+* As we will not be using this feature, it will be safer to also locate "UsePAM" and set to "no"
+
+Exit and save ```Ctrl + w``` -> yes
+
+
+
+
+
 
 
 
