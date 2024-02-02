@@ -25,9 +25,9 @@ In this project, we will explore the ways of building a HomeLab with minimal har
 
 ## Table of Content
 
-1. [Installing the Operating System (OS)](##Installing-the-Operating-System-(OS))
-2. [Configuring Wake on Lan (WOL) using your personal Smart Phone]
-3. [Configuring remote access via Secure Shell (SSH)](##Configuring-remote-access-via-Secure-Shell-(SSH))
+1. Installing the Operating System (OS)
+2. Configuring Wake on Lan (WOL) using your personal Smart Phone
+3. Configuring remote access via Secure Shell (SSH)]
 
 ## Installing the Operating System (OS)
 
