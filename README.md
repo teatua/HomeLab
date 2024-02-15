@@ -121,13 +121,13 @@ Exit and save ```Ctrl + x``` -> yes
 ## Disabling sleep
 
 You may want to stop your machine from going to sleep and becoming unaccessible, use the following command:
-'''
+```
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-'''
+```
 To re-enable sleep (optional):
-'''
+```
 sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
-'''
+```
 
 
 
