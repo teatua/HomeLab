@@ -116,7 +116,7 @@ Setup with ethtool [guide](https://necromuralist.github.io/posts/enabling-wake-o
 
 ## Configuring remote access via Secure Shell (SSH) 
 
-If you did not install ssh with during the Ubuntu install, open your terminal and login as root with your set credential:
+If you did not install ssh during the Ubuntu install, open your terminal and login as root with your set credential:
 ```
 su
 ```
