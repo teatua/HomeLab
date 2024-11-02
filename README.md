@@ -1,4 +1,4 @@
-# HomeLab built on a small factor server running Ubuntu 24.04 TLS Server and containerized applications
+# HomeLab built on a small factor machine running Ubuntu Server 24.04 TLS and containerized applications
 
 ## Description 
 
