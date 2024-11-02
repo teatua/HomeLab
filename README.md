@@ -53,6 +53,10 @@ Make sure to have your server connected to a monitor with keyboard and mouse.
 
 Your server should now launch the Ubuntu Server installation menu, follow the ubuntu [tutorial](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview) for guidance. For security purposes, it would be recommended to use a [strong and unique password](https://www.cisa.gov/secure-our-world/use-strong-passwords) when creating your user. 
 
+## Configuring Wake-On-Lan (WOL) 
+
+Setup with ethtool [guide](https://necromuralist.github.io/posts/enabling-wake-on-lan/)
+
 ## Configuring remote access via Secure Shell (SSH) 
 
 If you did not install ssh with during the Ubuntu install, open your terminal and login as root with your set credential:
