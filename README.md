@@ -92,13 +92,21 @@ The output below shows that the local time is set to Coordinated Universal Time 
 <img width="402" alt="image" src="https://github.com/user-attachments/assets/e148cf3e-9fc0-4978-94c5-5450463d805a">
 
 Find out the full name of the timezone. Usually, the naming convention uses the Region/City format. Insert the command below to see the timezone list:
-```timedatectl list-timezones```
+```
+timedatectl list-timezones
+```
 Alternatively, combine the timedatectl command with the grep command to filter the search using the name of a city.
-```timedatectl list-timezones | grep Paris```
+```
+timedatectl list-timezones | grep Paris
+```
 Once you have decided which timezone to select, run the following command to make the change. Note that it will not produce any output:
-```sudo timedatectl set-timezone [timezone]```
+```
+sudo timedatectl set-timezone [timezone]
+```
 Insert the command below and press Enter to verify the update:
-```timedatectl```
+```
+timedatectl
+```
 
 More information on [Ubuntu updates](https://documentation.ubuntu.com/server/how-to/software/package-management/).
 
