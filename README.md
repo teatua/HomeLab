@@ -26,8 +26,9 @@ In this project, we will explore the ways of building a HomeLab with minimal har
 ## Table of Content
 
 1. Installing the Operating System (OS)
-2. Configuring Wake on Lan (WOL) using your personal Smart Phone
-3. Configuring remote access via Secure Shell (SSH)]
+2. Setup Automatic Security Updates
+3. Configuring Wake on Lan (WOL) using your personal Smart Phone
+4. Configuring remote access via Secure Shell (SSH)]
 
 ## Installing the Operating System (OS)
 
@@ -52,6 +53,54 @@ Make sure to have your server connected to a monitor with keyboard and mouse.
 3. Once in the BIOS, find and set the USB drive to be first in boot priority. Enable Wake on Lan and save / exit.
 
 Your server should now launch the Ubuntu Server installation menu, follow the ubuntu [tutorial](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview) for guidance. For security purposes, it would be recommended to use a [strong and unique password](https://www.cisa.gov/secure-our-world/use-strong-passwords) when creating your user. 
+
+## Setup Automatic Security Updates
+This only covers Debian (.deb) packages, we will not be covering the snaps packages.
+
+Download the unattended-upgrades package 
+```
+sudo apt install unattended-upgrades
+```
+Configure automatic updates with reboot - this may affect production servers - during downtime (2am)
+
+```
+sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+```
+Remove comments and ensure value is true for:
+
+- Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+
+- Unattended-Upgrade::Remove-New-Unused-Dependencies "true";
+
+- Unattended-Upgrade::Remove-Unused-Dependencies "true";
+
+- Unattended-Upgrade::Automatic-Reboot "true";
+
+- Unattended-Upgrade::Automatic-Reboot-Time "02:00";
+
+Save & exit, then restart the unattended-upgrades service
+
+```
+sudo systemctl restart unattended-upgrades
+```
+
+You can verify the set time on your machine using the "date" command or timedatectl for further configuration
+```
+timedatectl
+```
+The output below shows that the local time is set to Coordinated Universal Time (UTC).
+<img width="402" alt="image" src="https://github.com/user-attachments/assets/e148cf3e-9fc0-4978-94c5-5450463d805a">
+
+Find out the full name of the timezone. Usually, the naming convention uses the Region/City format. Insert the command below to see the timezone list:
+```timedatectl list-timezones```
+Alternatively, combine the timedatectl command with the grep command to filter the search using the name of a city.
+```timedatectl list-timezones | grep Paris```
+Once you have decided which timezone to select, run the following command to make the change. Note that it will not produce any output:
+```sudo timedatectl set-timezone [timezone]```
+Insert the command below and press Enter to verify the update:
+```timedatectl```
+
+More information on [Ubuntu updates](https://documentation.ubuntu.com/server/how-to/software/package-management/).
 
 ## Configuring Wake-On-Lan (WOL) 
 
