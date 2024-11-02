@@ -1,8 +1,8 @@
-# HomeLab built on a small factor server running Debian 12 (Bookworm) and containerized applications
+# HomeLab built on a small factor server running Ubuntu 24.04 TLS Server and containerized applications
 
 ## Description 
 
-In this project, we will explore the ways of building a HomeLab with minimal hardware requirements. In this case, I am using an intel NUC i3 with 4 core, 8 threds running at 2.1GHz, with 8GB Ram and only 120 GB storage ! Small factor PC's of this kind can be found for cheap, avoiding ongoing and unexpected bills from cloud providers. Whilst being powerful enough to run several containerized applications, and gain full sovereignty over your LAB environment.
+In this project, we will explore the ways of building a HomeLab with minimal hardware requirements. In this case, I am using an intel NUC i3 with 4 core, 8 threds running at 2.1GHz, with 8GB Ram and only 120 GB storage ! Small factor PC's of this kind can be found for cheap, avoiding ongoing and unexpected bills from cloud providers, whilst being powerful enough to run several containerized applications, and gain full sovereignty over your LAB environment.
 
 **System minimal requirements:**
 
@@ -33,7 +33,7 @@ In this project, we will explore the ways of building a HomeLab with minimal har
 
 You will require:
 
-* Debian 12 (bookworm) Optical Disc Image [(ISO)](https://www.debian.org/download)
+* Ubuntu Server 24.04 TLS [installer](https://ubuntu.com/download/server) 
 * Bootable USB (8GB minimum)
 * [Balena Etcher](https://etcher.balena.io/)
 
@@ -51,13 +51,13 @@ Make sure to have your server connected to a monitor with keyboard and mouse.
 2. Check your server's motherboard manual on how to boot in BIOS, something alike pressing Delete on system wake.
 3. Once in the BIOS, find and set the USB drive to be first in boot priority. Enable Wake on Lan and save / exit.
 
-Your server should now launch the Debian 12 installation menu, you can choose a non graphical interface. For security purposes, it would be recommended to use a strong and unique password for both your root user, and session user. 
+Your server should now launch the Ubuntu Server installation menu, follow the ubuntu [tutorial](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview) for guidance. For security purposes, it would be recommended to use a [strong and unique password](https://www.cisa.gov/secure-our-world/use-strong-passwords) when creating your user. 
 
-## Configuring remote access via Secure Shell (SSH)
+## Configuring remote access via Secure Shell (SSH) - This step can be skipped if installed with ubuntu
 
 From your server's terminal, login as root with your set credential:
 ```
-sudo su
+su
 ```
 Install Open SSH Server
 ```
